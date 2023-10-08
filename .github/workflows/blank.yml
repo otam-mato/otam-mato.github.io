@@ -16,7 +16,7 @@ jobs:
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: 
+          role-to-assume: ${{ secrets.AWS_ROLE_FOR_ACTIONS }}
           aws-region: us-east-1
       - name: Copy to S3
         run: aws s3 sync . s3://www.olegm.co.uk
